@@ -17,4 +17,7 @@ create table history(
 	authusr varchar(255),
 	authpwd varchar(255),
 	caption varchar(255) not null,
-	ts datetime default (datetime('now','localtime')));	
+	ts datetime default (datetime('now','localtime')));
+	
+insert into authdata(id,username,password,caption)
+select -1,'-','-','other auth data';
