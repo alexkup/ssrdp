@@ -32,3 +32,6 @@ create table rdpdata(
 	
 insert into authdata(id,username,password,caption)
 select -1,'-','-','other auth data';
+
+insert into hostgroups(id,name)
+select -1,'none';
