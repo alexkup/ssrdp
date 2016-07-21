@@ -1,17 +1,17 @@
 create table hosts(
-	id int primary key default 'autoincrement',
+	id int primary key autoincrement,
 	name varchar(255) not null,
 	caption varchar(255) not null);
 	
 create table authdata (
-	id int primary key default 'autoincrement',
+	id int primary key autoincrement,
 	username	varchar(255) not null,
 	password	varchar(255) not null,
 	domain	varchar(255),
 	caption varchar(255) not null);
 
 create table history(
-	id int primary key default 'autoincrement',
+	id int primary key autoincrement,
 	name varchar(255) not null,
 	authdata_id int not null references authdata(id) default '-1',
 	authusr varchar(255),
