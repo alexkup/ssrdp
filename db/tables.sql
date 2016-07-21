@@ -28,7 +28,7 @@ create table rdpdata(
 	hostdata_id int not null references hosts(id),
 	authdata_id int not null references authdata(id) default '-1',
 	caption varchar(255) not null unique,
-	hostgroup_id int not null references hostgroups(id));
+	hostgroup_id int not null references hostgroups(id) default '-1');
 	
 insert into authdata(id,username,password,caption)
 select -1,'-','-','other auth data';
