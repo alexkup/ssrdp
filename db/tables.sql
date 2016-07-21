@@ -18,12 +18,17 @@ create table history(
 	authpwd varchar(255),
 	caption varchar(255) not null,
 	ts datetime default (datetime('now','localtime')));
+
+create table hostgroups(
+	id integer primary key autoincrement,
+	name nvachar(255));
 	
 create table rdpdata(
 	id integer primary key autoincrement,
 	hostdata_id int not null references hosts(id),
 	authdata_id int not null references authdata(id) default '-1',
-	caption varchar(255) not null unique);
+	caption varchar(255) not null unique,
+	hostgroup_id int not null references hostgroups(id));
 	
 insert into authdata(id,username,password,caption)
 select -1,'-','-','other auth data';
