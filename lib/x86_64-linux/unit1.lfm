@@ -54,7 +54,6 @@ object Form1: TForm1
     NumGlyphs = 1
     MaxLength = 0
     TabOrder = 4
-    OnChange = ListFilterEdit1Change
     FilteredListbox = ListBox1
   end
   object TrayIcon: TTrayIcon

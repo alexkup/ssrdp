@@ -1,14 +1,14 @@
 create table hosts(
 	id integer primary key autoincrement,
 	name varchar(255) not null,
-	caption varchar(255) not null);
+	caption varchar(255) not null unique);
 	
 create table authdata (
 	id integer primary key autoincrement,
 	username	varchar(255) not null,
 	password	varchar(255) not null,
 	domain	varchar(255),
-	caption varchar(255) not null);
+	caption varchar(255) not null unique);
 
 create table history(
 	id integer primary key autoincrement,
@@ -21,7 +21,7 @@ create table history(
 
 create table hostgroups(
 	id integer primary key autoincrement,
-	name nvachar(255));
+	name nvachar(255) unique);
 	
 create table rdpdata(
 	id integer primary key autoincrement,

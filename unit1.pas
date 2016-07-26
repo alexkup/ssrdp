@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, RTTICtrls,
   ListFilterEdit, Forms, Controls, Graphics, Dialogs, ExtCtrls, Menus, StdCtrls,
-  DbCtrls, ComboEx, FileCtrl;
+  DbCtrls, ComboEx, FileCtrl, MaskEdit;
 
 type
 
@@ -17,6 +17,34 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    AuthGroupBox: TGroupBox;
+    addhostButton: TButton;
+    authaddButton: TButton;
+    Button4: TButton;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    rdplabelEdit: TLabeledEdit;
+    passwordEdit: TEdit;
+    HostsGroupsAddButton: TButton;
+    hostsgroupsEdit: TLabeledEdit;
+    usernameEdit: TEdit;
+    domainEdit: TEdit;
+    authlabelEdit: TEdit;
+    hostlabelEdit: TEdit;
+    hostgroupsGroupBox: TGroupBox;
+    HostEdit: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    rdpGroupBox: TGroupBox;
+    hostgroupbox: TGroupBox;
     ListBox1: TListBox;
     ListFilterEdit1: TListFilterEdit;
     MenuItem1: TMenuItem;
@@ -28,9 +56,9 @@ type
     TrayIcon: TTrayIcon;
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure ListFilterEdit1Change(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+    procedure rdpGroupBoxClick(Sender: TObject);
     procedure TrayIconClick(Sender: TObject);
     procedure LoadAuthData;
     procedure LoadHostData;
@@ -212,14 +240,9 @@ begin
  LoadHostData;
  LoadRDPData;
  LoadHistoryData;
- ListFilterEdit1.clear;
+ ListFilterEdit1.Items.Clear;
  for i:=0 to length(HostData)-2 do ListFilterEdit1.Items.add(HostData[i].name);
- //listbox1.ItemIndex:=0;
-end;
-
-procedure TForm1.Edit1Change(Sender: TObject);
-begin
-
+// listbox1.ItemIndex:=0;
 end;
 
 
@@ -228,7 +251,12 @@ begin
   form1.Hide;
 end;
 
-procedure TForm1.ListFilterEdit1Change(Sender: TObject);
+procedure TForm1.Label2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.rdpGroupBoxClick(Sender: TObject);
 begin
 
 end;

@@ -1,44 +1,44 @@
 object Form1: TForm1
   Left = 297
-  Height = 482
+  Height = 632
   Top = 164
   Width = 744
-  Caption = 'Form1'
-  ClientHeight = 482
+  Caption = 'ssrdp'
+  ClientHeight = 632
   ClientWidth = 744
   OnActivate = FormCreate
   LCLVersion = '1.6.0.4'
   object Button1: TButton
-    Left = 24
+    Left = 32
     Height = 25
-    Top = 192
+    Top = 432
     Width = 75
     Caption = 'Button1'
     OnClick = Button1Click
     TabOrder = 0
   end
   object Button2: TButton
-    Left = 145
+    Left = 144
     Height = 25
-    Top = 191
+    Top = 432
     Width = 75
     Caption = 'Button2'
     OnClick = FormCreate
     TabOrder = 1
   end
   object Button3: TButton
-    Left = 376
+    Left = 240
     Height = 25
-    Top = 192
+    Top = 432
     Width = 75
     Caption = 'Button3'
     OnClick = Button3Click
     TabOrder = 2
   end
   object ListBox1: TListBox
-    Left = 120
+    Left = 352
     Height = 80
-    Top = 72
+    Top = 480
     Width = 328
     ItemHeight = 0
     ScrollWidth = 326
@@ -46,16 +46,193 @@ object Form1: TForm1
     TopIndex = -1
   end
   object ListFilterEdit1: TListFilterEdit
-    Left = 496
+    Left = 352
     Height = 27
-    Top = 56
-    Width = 103
+    Top = 440
+    Width = 328
     ButtonWidth = 23
     NumGlyphs = 1
     MaxLength = 0
     TabOrder = 4
-    OnChange = ListFilterEdit1Change
     FilteredListbox = ListBox1
+  end
+  object hostgroupbox: TGroupBox
+    Left = 8
+    Height = 176
+    Top = 8
+    Width = 185
+    Caption = 'Hosts'
+    ClientHeight = 157
+    ClientWidth = 181
+    TabOrder = 5
+    object HostEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 88
+      Width = 168
+      TabOrder = 0
+      Text = 'HostEdit'
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 17
+      Top = 64
+      Width = 35
+      Caption = 'Host:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 17
+      Top = 8
+      Width = 71
+      Caption = 'Host label:'
+      ParentColor = False
+      OnClick = Label2Click
+    end
+    object hostlabelEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 32
+      Width = 168
+      TabOrder = 1
+      Text = 'hostlabelEdit'
+    end
+    object addhostButton: TButton
+      Left = 101
+      Height = 25
+      Top = 128
+      Width = 75
+      Caption = 'Add'
+      TabOrder = 2
+    end
+  end
+  object AuthGroupBox: TGroupBox
+    Left = 200
+    Height = 288
+    Top = 8
+    Width = 185
+    Caption = 'Auth'
+    ClientHeight = 269
+    ClientWidth = 181
+    TabOrder = 6
+    object Label3: TLabel
+      Left = 8
+      Height = 17
+      Top = 64
+      Width = 71
+      Caption = 'username:'
+      ParentColor = False
+    end
+    object usernameEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 88
+      Width = 168
+      TabOrder = 0
+      Text = 'usernameEdit'
+    end
+    object Label4: TLabel
+      Left = 8
+      Height = 17
+      Top = 120
+      Width = 69
+      Caption = 'password:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 17
+      Top = 176
+      Width = 56
+      Caption = 'domain:'
+      ParentColor = False
+    end
+    object domainEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 200
+      Width = 168
+      TabOrder = 1
+      Text = 'domainEdit'
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 17
+      Top = 8
+      Width = 74
+      Caption = 'Auth label:'
+      ParentColor = False
+    end
+    object authlabelEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 32
+      Width = 168
+      TabOrder = 2
+      Text = 'authlabelEdit'
+    end
+    object authaddButton: TButton
+      Left = 101
+      Height = 25
+      Top = 240
+      Width = 75
+      Caption = 'Add'
+      TabOrder = 3
+    end
+    object passwordEdit: TEdit
+      Left = 8
+      Height = 27
+      Top = 144
+      Width = 168
+      EchoMode = emPassword
+      PasswordChar = '*'
+      TabOrder = 4
+    end
+  end
+  object rdpGroupBox: TGroupBox
+    Left = 424
+    Height = 105
+    Top = 248
+    Width = 185
+    Caption = 'RDP'
+    TabOrder = 7
+  end
+  object hostgroupsGroupBox: TGroupBox
+    Left = 8
+    Height = 105
+    Top = 191
+    Width = 185
+    Caption = 'HostsGroups'
+    ClientHeight = 86
+    ClientWidth = 181
+    TabOrder = 8
+    object hostsgroupsEdit: TLabeledEdit
+      Left = 8
+      Height = 27
+      Top = 24
+      Width = 168
+      EditLabel.AnchorSideLeft.Control = hostsgroupsEdit
+      EditLabel.AnchorSideRight.Control = hostsgroupsEdit
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = hostsgroupsEdit
+      EditLabel.Left = 8
+      EditLabel.Height = 17
+      EditLabel.Top = 4
+      EditLabel.Width = 168
+      EditLabel.Caption = 'hostsgroupsEdit'
+      EditLabel.ParentColor = False
+      TabOrder = 0
+      Text = 'hostsgroupsEdit'
+    end
+    object HostsGroupsAddButton: TButton
+      Left = 101
+      Height = 25
+      Top = 57
+      Width = 75
+      Caption = 'Add'
+      TabOrder = 1
+    end
   end
   object TrayIcon: TTrayIcon
     PopUpMenu = PopupMenu1
@@ -4346,12 +4523,12 @@ object Form1: TForm1
     }
     Visible = True
     OnClick = TrayIconClick
-    left = 24
-    top = 264
+    left = 272
+    top = 488
   end
   object PopupMenu1: TPopupMenu
-    left = 104
-    top = 264
+    left = 352
+    top = 488
     object MenuItem1: TMenuItem
       Caption = 'New Item1hh'
     end
@@ -4366,8 +4543,8 @@ object Form1: TForm1
     KeepConnection = False
     Transaction = SQLTransaction
     Options = []
-    left = 216
-    top = 264
+    left = 464
+    top = 488
   end
   object SQLQuery: TSQLQuery
     FieldDefs = <>
@@ -4378,14 +4555,14 @@ object Form1: TForm1
     )
     Options = []
     Params = <>
-    left = 104
-    top = 312
+    left = 352
+    top = 536
   end
   object SQLTransaction: TSQLTransaction
     Active = True
     Database = SQLite3Connection
     Options = []
-    left = 24
-    top = 312
+    left = 272
+    top = 536
   end
 end
